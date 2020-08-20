@@ -1,0 +1,1 @@
+This project is the game of ROCK PAPER SCISSORS, for starters it will be only playe in console against the computer.
