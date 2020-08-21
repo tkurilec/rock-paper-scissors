@@ -2,13 +2,13 @@
 
 
 
-function computerPlay(){
+function computerPlay(){ //this function randomly decides what the cpu will play
     let computerPicks = ['Rock', 'Paper', 'Scissors'];
     let computerPick = computerPicks[Math.floor(Math.random() * computerPicks.length)];
     return computerPick;
 }
 
-function playerPlay(){
+function playerPlay(){ //this function prompts the player to pick their move, while making sure any upper/lower case can be used
     play = prompt("Please select rock, paper, or scissors!");
         if (play.match(/rock/i)){
             return 'Rock';
@@ -31,14 +31,14 @@ function playerPlay(){
     
 }
 
-playerSelection = playerPlay();
+playerSelection = playerPlay(); //variables for the above functions
 computerSelection = computerPlay();
 
-let win = 0;
+let win = 0; //variables used to track win/losses/ties
 let loss = 0;
 let tie = 0;
 
-function playRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){ //function that decides if the player won, lost, or tied
     if (playerSelection === 'Rock' && computerSelection === 'Paper'){
          console.log("You lose! Paper beats rock!")
          loss += 1;
@@ -89,7 +89,7 @@ function playRound(playerSelection, computerSelection){
 
 
 
-function game(){
+function game(){ //function that goes through 5 rounds while keeping score
         playRound(playerSelection, computerSelection)
         console.log('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
 
@@ -107,7 +107,7 @@ function game(){
         computerSelection = computerPlay();
         playRound(playerSelection, computerSelection)
         console.log('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
-        
+
         playerSelection = playerPlay();
         computerSelection = computerPlay();
         playRound(playerSelection, computerSelection)
