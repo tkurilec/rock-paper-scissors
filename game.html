@@ -27,8 +27,8 @@ function playerPlay(){
     
 }
 
-const playerSelection = playerPlay();
-const computerSelection = computerPlay();
+playerSelection = playerPlay();
+computerSelection = computerPlay();
 
 let win = 0;
 let loss = 0;
@@ -86,11 +86,25 @@ function playRound(playerSelection, computerSelection){
 
 
 function game(){
+        playRound(playerSelection, computerSelection)
+        playerSelection = playerPlay();
+        computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection)
+        playerSelection = playerPlay();
+        computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection)
+        playerSelection = playerPlay();
+        computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection)
+        playerSelection = playerPlay();
+        computerSelection = computerPlay();
+        playRound(playerSelection, computerSelection)
+        return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
         
     }
    
 
-console.log(playRound(playerSelection, computerSelection))
+console.log(game())
 
 
 
