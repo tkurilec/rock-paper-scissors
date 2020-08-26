@@ -6,6 +6,8 @@
 <div id="scorekeeping">   </div>
 
 
+
+
 </html>
 
 
@@ -16,11 +18,14 @@ resultText.style.height = 25;
 container.appendChild(resultText);
 
 const instructions = document.createElement('h1');
-instructions.textContent = '5 Rounds, Can you beat the CPU? Click a button above to get started!'
+instructions.textContent = 'First to 5 Wins! Can you beat the CPU? Click a button above to get started!'
 resultText.appendChild(instructions)
 
 const scoreBoard = document.createElement('div')
 scorekeeping.appendChild(scoreBoard)
+
+const winner = document.createElement('h1');
+scorekeeping.appendChild(winner);
 
 const rock = document.querySelector('#Rock');
 const paper = document.querySelector('#Paper');
@@ -44,9 +49,8 @@ function game(){ //function that goes through 5 rounds while keeping score
             scoreBoard.textContent= (results);
             scorekeeping.appendChild(scoreBoard);
 
-            total += 1
-            if (total >= 5) {
-                console.log('Game Over');
+            if (win == 5 || loss == 5) {
+                declareWinner();
 }
             return console.log(total, results);
             
@@ -59,12 +63,9 @@ function game(){ //function that goes through 5 rounds while keeping score
             let results = ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) );
             scoreBoard.textContent= (results);
             scorekeeping.appendChild(scoreBoard);
-
-            total += 1
-            if (total >= 5) {
-                console.log('Game Over');
+            if (win == 5 || loss == 5) {
+                declareWinner();
 }
-            return console.log(total, results);
            
 });
 
@@ -75,11 +76,8 @@ function game(){ //function that goes through 5 rounds while keeping score
             let results = ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) );
             scoreBoard.textContent= (results);
             scorekeeping.appendChild(scoreBoard);
-
-
-            total += 1
-            if (total >= 5) {
-                console.log('Game Over');
+            if (win == 5 || loss == 5) {
+                declareWinner();
  }
             return console.log(total, results);
             
@@ -159,12 +157,25 @@ function playRound(playerSelection, computerSelection){ //function that decides 
     }
 
 
-//function declareWinner(){
-    //if (win > loss)
-
-
-
-//}    
+function declareWinner(){
+    if (win == 5){
+        winner.textContent = "You are the winner!" 
+        resultText.appendChild(winner)
+        rock.remove();
+        paper.remove();
+        scissors.remove();
+        
+    }
+    else if (loss == 5){
+        winner.textContent = "Bummer! You lost! Better luck next time!" 
+        resultText.appendChild(winner);
+        rock.remove();
+        paper.remove();
+        scissors.remove();
+       
+    }
+  
+}    
     
         
     
