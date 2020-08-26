@@ -1,1 +1,1 @@
-This project is the game of ROCK PAPER SCISSORS, for starters it will be only played in console against the computer.
+This project is the game of ROCK PAPER SCISSORS, it contains a simple ui for the user to select rock, paper, or scissors.  It keeps score and once the user hits 5 wins or losses, it declares them a winner or loser.
