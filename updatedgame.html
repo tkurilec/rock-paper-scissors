@@ -10,12 +10,11 @@
 
 <script>
 const scoreboard = document.createElement('div')
-scoreboard.style.border = "black";
-scoreboard.style.backgroundColor = "gray"
-scoreboard.textContent = "asjdfklasdfjkh"
+scoreboard.style.backgroundColor = 'green';
 scoreboard.style.marginTop = 25;
+scoreboard.style.width = 400;
+scoreboard.style.height = 25;
 container.appendChild(scoreboard);
-
 
 
 const rock = document.querySelector('#Rock');
@@ -27,13 +26,7 @@ let computerSelection
 let win = 0; //variables used to track win/losses/ties
 let loss = 0;
 let tie = 0;
-
-
-
-
-
-
-
+let total = win + loss + tie;
 
 
 rock.addEventListener('click',() => {
@@ -66,48 +59,58 @@ function computerPlay(){ //this function randomly decides what the cpu will play
     
 function playRound(playerSelection, computerSelection){ //function that decides if the player won, lost, or tied
     if (playerSelection === 'Rock' && computerSelection === 'Paper'){
-         console.log("You lose! Paper beats rock!")
+        scoreboard.textContent = "You lose! Paper beats rock!" 
+        container.appendChild(scoreboard);
          loss += 1;
             return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
         }
     else if(playerSelection === 'Rock' && computerSelection === 'Scissors'){
-         console.log("You win! Rock beats scissors!");
+        scoreboard.textContent = "You win! Rock beats scissors!"
+        container.appendChild(scoreboard); 
             win += 1;
             return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
         }
     else if(playerSelection === 'Rock' && computerSelection === 'Rock'){
-         console.log("A tie! You both played rock!");
+        scoreboard.textContent = "A tie! You both played rock!" 
+        container.appendChild(scoreboard);
             tie += 1;
             return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
         }
     else if(playerSelection === 'Scissors' && computerSelection === 'Rock'){
+        scoreboard.textContent = "You lose! Rock beats scissors!" 
+        container.appendChild(scoreboard);
         console.log("You lose! Rock beats scissors!");
             loss += 1;
             return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
         }
     else if(playerSelection === 'Scissors' && computerSelection === 'Paper'){
-        console.log("You win! Scissors beats paper!");
+        scoreboard.textContent = "You win! Scissors beats paper!"
+        container.appendChild(scoreboard);
             win += 1;
             return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
         }
     else if(playerSelection === 'Scissors' && computerSelection === 'Scissors'){
-        console.log("A tie! You both played scissors!");
+        scoreboard.textContent = "A tie! You both played scissors!" 
+        container.appendChild(scoreboard);
             tie += 1;
             return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
         }
     else if(playerSelection === 'Paper' && computerSelection === 'Rock'){
-        console.log("You win! Paper beats rock!");
+        scoreboard.textContent = "You win! Paper beats rock!"
+        container.appendChild(scoreboard);
             win += 1;
             return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
         }
     else if(playerSelection === 'Paper' && computerSelection === 'Scissors'){
-        console.log("You lose! Scissors beats paper!");
+        scoreboard.textContent = "You lose! Scissors beats paper!" 
+        container.appendChild(scoreboard);
             loss += 1;
             return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
         
         }
     else if(playerSelection === 'Paper' && computerSelection === 'Paper'){
-        console.log("A tie! You both played paper!");
+        scoreboard.textContent = "A tie! You both played paper!" 
+        container.appendChild(scoreboard);
             tie += 1;
             return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
         }
