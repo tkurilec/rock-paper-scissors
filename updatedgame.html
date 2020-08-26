@@ -4,10 +4,6 @@
 <button id="Scissors">Scissors</button>
 <div id="container">   </div>
 <div id="scorekeeping">   </div>
-
-
-
-
 </html>
 
 
@@ -52,7 +48,6 @@ function game(){ //function that goes through 5 rounds while keeping score
             if (win == 5 || loss == 5) {
                 declareWinner();
 }
-            return console.log(total, results);
             
 });
 
@@ -63,6 +58,7 @@ function game(){ //function that goes through 5 rounds while keeping score
             let results = ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) );
             scoreBoard.textContent= (results);
             scorekeeping.appendChild(scoreBoard);
+            
             if (win == 5 || loss == 5) {
                 declareWinner();
 }
@@ -76,28 +72,19 @@ function game(){ //function that goes through 5 rounds while keeping score
             let results = ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) );
             scoreBoard.textContent= (results);
             scorekeeping.appendChild(scoreBoard);
+            
             if (win == 5 || loss == 5) {
                 declareWinner();
- }
-            return console.log(total, results);
-            
+ }        
 });
-    
-   
-
 }
-
-
 
 function computerPlay(){ //this function randomly decides what the cpu will play
     let computerPicks = ['Rock', 'Paper', 'Scissors'];
     let computerPick = computerPicks[Math.floor(Math.random() * computerPicks.length)];
     computerSelection = computerPick
-    }
+    } 
 
-
-
-    
 function playRound(playerSelection, computerSelection){ //function that decides if the player won, lost, or tied
     if (playerSelection === 'Rock' && computerSelection === 'Paper'){
         resultText.textContent = "You lose! Paper beats rock!" 
@@ -156,7 +143,6 @@ function playRound(playerSelection, computerSelection){ //function that decides 
         }
     }
 
-
 function declareWinner(){
     if (win == 5){
         winner.textContent = "You are the winner!" 
@@ -171,14 +157,10 @@ function declareWinner(){
         resultText.appendChild(winner);
         rock.remove();
         paper.remove();
-        scissors.remove();
-       
+        scissors.remove();  
     }
-  
 }    
-    
-        
-    
+       
 game()
     
     
