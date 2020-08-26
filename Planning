@@ -1,0 +1,27 @@
+Initial Instructions:
+Edit rock paper and scissors game from before and give it a simple UI.
+
+
+Understanding the Problem:
+Go back to old code and adjust it so that the player can click buttons to select what their move is.  Selecting a move starts the game, and then the score is kept up until round 5. The game is over after round 5 and a winner is announced.
+
+Plan:
+User interface – Simple rock, paper, scissors buttons, score that is shown after each move below the buttons. And then a winner announced after 5 rounds that appears below that in bigger letters.
+
+Inputs from program – User selects by clicking button.
+
+Desired Output – As each key is pressed, the player selection is made.  This kicks off the best of 5 game, the cpu randomly selects after each button click and the score is shown after each click. After 5 rounds the winner is declared.
+
+Pseudo Code:
+    1. User clicks button to make selection of rock paper scissors (x)
+        1. If x selected, player selection is x. (x)
+            1. CPU randomly picks. (x)
+                1. Game is ran and winner decided (x)
+                    1. Print running score of player underneath of buttons.(x)
+                        1. Check if 5 games have been played.(x)
+                            1. If no, start back at of beginning, if yes continue to (2)(x)
+    2. Declare winner(x)
+        1. if player wins > cpu wins(x)
+            1. print player wins(x)
+        2. if cpu wins > player wins(x)
+            1. print cpu wins(x)
