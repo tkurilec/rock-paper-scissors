@@ -2,17 +2,38 @@
 <button id="Rock">Rock</button>
 <button id="Paper">Paper</button>
 <button id="Scissors">Scissors</button>
+<div id="container">   </div>
 
 
 </html>
 
 
 <script>
+const scoreboard = document.createElement('div')
+scoreboard.style.border = "black";
+scoreboard.style.backgroundColor = "gray"
+scoreboard.textContent = "asjdfklasdfjkh"
+scoreboard.style.marginTop = 25;
+container.appendChild(scoreboard);
+
+
+
 const rock = document.querySelector('#Rock');
 const paper = document.querySelector('#Paper');
 const scissors = document.querySelector('#Scissors');
 
 let playerSelection;
+let computerSelection
+let win = 0; //variables used to track win/losses/ties
+let loss = 0;
+let tie = 0;
+
+
+
+
+
+
+
 
 
 rock.addEventListener('click',() => {
@@ -41,9 +62,7 @@ function computerPlay(){ //this function randomly decides what the cpu will play
     }
 
 
-let win = 0; //variables used to track win/losses/ties
-let loss = 0;
-let tie = 0;
+
     
 function playRound(playerSelection, computerSelection){ //function that decides if the player won, lost, or tied
     if (playerSelection === 'Rock' && computerSelection === 'Paper'){
