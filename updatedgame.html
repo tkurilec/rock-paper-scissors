@@ -10,7 +10,6 @@
 
 <script>
 const scoreboard = document.createElement('div')
-scoreboard.style.backgroundColor = 'green';
 scoreboard.style.marginTop = 25;
 scoreboard.style.width = 400;
 scoreboard.style.height = 25;
@@ -23,28 +22,37 @@ const scissors = document.querySelector('#Scissors');
 
 let playerSelection;
 let computerSelection
+
 let win = 0; //variables used to track win/losses/ties
 let loss = 0;
 let tie = 0;
-let total = win + loss + tie;
 
+  
 
 rock.addEventListener('click',() => {
-    playerSelection = (rock.id)
+    playerSelection = (rock.id);
     computerPlay();
     playRound(playerSelection,computerSelection);
+    let results = ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) );
+    return console.log(results);
+    
 });
 
 paper.addEventListener('click',() => {
-    playerSelection = (paper.id)
+    playerSelection = (paper.id);
     computerPlay();
     playRound(playerSelection,computerSelection);
+    let results = ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) );
+    return console.log(results);
+    
 });
 
 scissors.addEventListener('click',() => {
-    playerSelection = (scissors.id)
+    playerSelection = (scissors.id);
     computerPlay();
     playRound(playerSelection,computerSelection);
+    let results = ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) );
+    return console.log(results);
 });
 
 
@@ -61,61 +69,59 @@ function playRound(playerSelection, computerSelection){ //function that decides 
     if (playerSelection === 'Rock' && computerSelection === 'Paper'){
         scoreboard.textContent = "You lose! Paper beats rock!" 
         container.appendChild(scoreboard);
-         loss += 1;
-            return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
+        loss += 1;
+                    
         }
     else if(playerSelection === 'Rock' && computerSelection === 'Scissors'){
         scoreboard.textContent = "You win! Rock beats scissors!"
         container.appendChild(scoreboard); 
             win += 1;
-            return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
+ 
         }
     else if(playerSelection === 'Rock' && computerSelection === 'Rock'){
         scoreboard.textContent = "A tie! You both played rock!" 
         container.appendChild(scoreboard);
             tie += 1;
-            return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
+
         }
     else if(playerSelection === 'Scissors' && computerSelection === 'Rock'){
         scoreboard.textContent = "You lose! Rock beats scissors!" 
         container.appendChild(scoreboard);
-        console.log("You lose! Rock beats scissors!");
             loss += 1;
-            return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
+            
         }
     else if(playerSelection === 'Scissors' && computerSelection === 'Paper'){
         scoreboard.textContent = "You win! Scissors beats paper!"
         container.appendChild(scoreboard);
             win += 1;
-            return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
+            
         }
     else if(playerSelection === 'Scissors' && computerSelection === 'Scissors'){
         scoreboard.textContent = "A tie! You both played scissors!" 
         container.appendChild(scoreboard);
             tie += 1;
-            return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
+            
         }
     else if(playerSelection === 'Paper' && computerSelection === 'Rock'){
         scoreboard.textContent = "You win! Paper beats rock!"
         container.appendChild(scoreboard);
             win += 1;
-            return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
+            
         }
     else if(playerSelection === 'Paper' && computerSelection === 'Scissors'){
         scoreboard.textContent = "You lose! Scissors beats paper!" 
         container.appendChild(scoreboard);
             loss += 1;
-            return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
+            
         
         }
     else if(playerSelection === 'Paper' && computerSelection === 'Paper'){
         scoreboard.textContent = "A tie! You both played paper!" 
         container.appendChild(scoreboard);
             tie += 1;
-            return ('Win: ' + (win) +' Loss: ' + (loss) + ' Ties: ' + (tie) )
+            
         }
     }
-    
     
     
 function game(){ //function that goes through 5 rounds while keeping score
